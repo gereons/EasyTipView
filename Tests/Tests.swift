@@ -4,8 +4,8 @@ import EasyTipView
  
 class Tests: XCTestCase {
     
-    var view : UIView!
-    var superview : UIView!
+    var view: UIView!
+    var superview: UIView!
     
     override func setUp() {
         super.setUp()

@@ -201,7 +201,7 @@ For more animations, checkout the example project.
 ```swift
 
 public protocol EasyTipViewDelegate {
-    func easyTipViewDidDismiss(_ tipView : EasyTipView)
+    func easyTipViewDidDismiss(_ tipView: EasyTipView)
 }
 ```
 

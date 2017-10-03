@@ -68,7 +68,7 @@ class ViewController: UIViewController, EasyTipViewDelegate {
         EasyTipView.show(forItem: self.navBarItem,
             withinSuperview: self.navigationController?.view,
             text: text,
-            delegate : self)
+            delegate: self)
     }
     
     @IBAction func toolbarItemAction() {
@@ -84,7 +84,7 @@ class ViewController: UIViewController, EasyTipViewDelegate {
         }
     }
     
-    @IBAction func buttonAction(sender : UIButton) {
+    @IBAction func buttonAction(sender: UIButton) {
         switch sender {
         case buttonA:
             
