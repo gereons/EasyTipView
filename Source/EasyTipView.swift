@@ -242,7 +242,7 @@ open class EasyTipView: UIView {
     // MARK: - Lazy variables -
     
     fileprivate lazy var textSize: CGSize = { [unowned self] in
-        var attributes = [ NSAttributedStringKey.font: self.preferences.drawing.font ]
+        var attributes = [ NSAttributedString.Key.font: self.preferences.drawing.font ]
         
         var textSize = self.text.boundingRect(with: CGSize(width: self.preferences.positioning.maxWidth, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attributes, context: nil).size
         
@@ -276,7 +276,7 @@ open class EasyTipView: UIView {
         super.init(frame: CGRect.zero)
         
         self.backgroundColor = UIColor.clear
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRotation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRotation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     deinit {
@@ -503,10 +503,10 @@ open class EasyTipView: UIView {
 
         let textRect = CGRect(x: bubbleFrame.origin.x + (bubbleFrame.size.width - textSize.width) / 2, y: bubbleFrame.origin.y + (bubbleFrame.size.height - textSize.height) / 2, width: textSize.width, height: textSize.height)
 
-        let attributes: [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey.font: preferences.drawing.font,
-            NSAttributedStringKey.foregroundColor: preferences.drawing.foregroundColor,
-            NSAttributedStringKey.paragraphStyle: paragraphStyle
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: preferences.drawing.font,
+            NSAttributedString.Key.foregroundColor: preferences.drawing.foregroundColor,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
         text.draw(in: textRect, withAttributes: attributes)
     }
